@@ -16,9 +16,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.arrienty.tokped.layout.BannerTopCategory
 import com.arrienty.tokped.layout.TopBar
 import com.arrienty.tokped.layout.TopMenu
 import com.arrienty.tokped.model.dummyListMenu
+import com.arrienty.tokped.model.dummyListTopCategory
 import com.arrienty.tokped.ui.theme.TokpedTheme
 
 
@@ -41,6 +43,7 @@ fun TokpedApp(modifier: Modifier = Modifier) {
     Column (modifier.verticalScroll(rememberScrollState())) {
         TopBars()
         TopMenus()
+        TopCategory()
     }
 }
 
@@ -64,5 +67,14 @@ fun TopBars(modifier: Modifier = Modifier) {
 private fun TopBarPrev() {
     TokpedTheme {
         TokpedApp()
+    }
+}
+
+@Composable
+fun TopCategory(modifier: Modifier = Modifier) {
+    LazyRow {
+        items(dummyListTopCategory) {
+            BannerTopCategory(listCategory = it)
+        }
     }
 }

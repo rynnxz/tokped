@@ -15,4 +15,3 @@ val dummyListTopCategory = listOf(
     R.drawable.official to R.string.txt_official_store,
     R.drawable.paylater to R.string.txt_pay_later
 ).map { ListCategory(it.first, it.second) }
-
